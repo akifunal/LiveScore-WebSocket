@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+html,
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+  /* background-image: url('https://scor-s3-cdn.statscore.com/scoreframe/partners/default/backgrounds/background-body.jpg');*/
+  background-image: url('https://scor-s3-cdn.statscore.com/scoreframe/partners/demo/backgrounds/soccer.jpg');
+  background-size: cover;
+}
+
+.section-navbar {
+  font-weight: 700;
+}
+
+.leftMenu_header {
+  background: linear-gradient(to bottom, #00486b 0, #003862 100%);
+  background-image: linear-gradient(rgb(0, 72, 107) 0px, rgb(0, 56, 98) 100%);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  color: white;
+}

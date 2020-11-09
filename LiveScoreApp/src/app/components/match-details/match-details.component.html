@@ -1,0 +1,39 @@
+<div *ngIf="currentMatch" class="edit-form text-white-50">
+  <h4>Match</h4>
+  <form>
+    <div class="form-group">
+      <label for="title">Home - Away</label>
+      <input type="text" class="form-control" id="title" [(ngModel)]="currentMatch.title" name="title" />
+    </div>
+    <div class="form-group">
+      <label for="score">Score</label>
+      <input type="text" class="form-control" id="score" [(ngModel)]="currentMatch.score" name="score" />
+    </div>
+
+    <div class="form-group">
+      <label><strong>Status:</strong></label>
+      {{ currentMatch.published ? "Published" : "Pending" }}
+    </div>
+  </form>
+
+  <button class="badge badge-primary mr-2" *ngIf="currentMatch.published" (click)="updatePublished(false)">
+    UnPublish
+  </button>
+  <button *ngIf="!currentMatch.published" class="badge badge-primary mr-2" (click)="updatePublished(true)">
+    Publish
+  </button>
+
+  <button class="badge badge-danger mr-2" (click)="deleteMatch()">
+    Delete
+  </button>
+
+  <button type="submit" class="badge badge-success" (click)="updateMatch()">
+    Update
+  </button>
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentMatch">
+  <br />
+  <p>Cannot access this Match...</p>
+</div>

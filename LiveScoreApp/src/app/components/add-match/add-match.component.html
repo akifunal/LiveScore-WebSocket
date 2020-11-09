@@ -1,0 +1,27 @@
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group d-inline-flex">
+        <label for="title" class="text-white mt-2 mr-5">Home</label>
+        <input type="text" class="form-control" id="teamHome" required [(ngModel)]="match.teamHome" name="teamHome" />
+        <label for="title" class="text-white mt-2 mx-5">Away</label>
+        <input type="text" class="form-control ml-3" id="teamAway" required [(ngModel)]="match.teamAway"
+          name="teamAway" />
+      </div>
+
+      <div class="form-group d-inline-flex mt-3">
+        <label for="description" class="text-white mt-2 mr-2">Score Home</label>
+        <input type="number" class="form-control" id="score1" required [(ngModel)]="match.scoreHome" name="score1"
+          min="0" max="20" oninput="validity.valid||(value='');" />
+        <label for="description" class="text-white mt-2 ml-5 mr-4">Score Away</label>
+        <input type="number" class="form-control" id="score2" required [(ngModel)]="match.scoreAway" name="score2"
+          min="0" max="20" oninput="validity.valid||(value='');" />
+      </div>
+
+      <button (click)="saveMatch()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newMatch()">Add New Match</button>
+    </div>
+  </div>
